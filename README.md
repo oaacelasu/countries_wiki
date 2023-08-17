@@ -1,6 +1,6 @@
-# Countries Wiki
+# Countries Wiki App
 
-The Travel Explorer App is a web application built using React that allows users to explore information about different countries, including their details, weather, and images.
+The Countries Wiki App is a web application built using React that allows users to explore information about different countries, including their details, weather, and images.
 
 ## Table of Contents
 
@@ -15,6 +15,8 @@ The Travel Explorer App is a web application built using React that allows users
 To get started with the Travel Explorer App, follow these steps:
 
 1. Clone the repository:
+
+    git clone https://github.com/oaacelasu/countries_wiki.git
 
 2. Navigate to the project directory:
 
@@ -32,7 +34,7 @@ To get started with the Travel Explorer App, follow these steps:
 
 ## Features
 
-The Travel Explorer App provides the following features:
+The Countries Wiki App provides the following features:
 
 - Home Page with a list of countries categorized by continents.
 - Country Detail Page with information about a specific country, including its details, weather, and images.
@@ -42,7 +44,7 @@ The Travel Explorer App provides the following features:
 
 ## APIs Used
 
-The Travel Explorer App utilizes the following APIs to provide information and enhance the user experience:
+The Countries Wiki App utilizes the following APIs to provide information and enhance the user experience:
 
 ### Unsplash API
 
@@ -75,3 +77,4 @@ This project is open for contributions. If you'd like to contribute, please foll
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
