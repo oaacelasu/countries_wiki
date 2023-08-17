@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Countries Wiki
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Travel Explorer App is a web application built using React that allows users to explore information about different countries, including their details, weather, and images.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [APIs Used](#apis-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started with the Travel Explorer App, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    cd countries-wiki
 
-### `npm run build`
+3. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm start
 
-### `npm run eject`
+5. Open the application in your browser at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Travel Explorer App provides the following features:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Home Page with a list of countries categorized by continents.
+- Country Detail Page with information about a specific country, including its details, weather, and images.
+- Search functionality to filter countries by name.
+- Sidebar for selecting continents to filter countries by region.
+- Styling using the Pico CSS library for a clean and responsive design.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## APIs Used
 
-## Learn More
+The Travel Explorer App utilizes the following APIs to provide information and enhance the user experience:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Unsplash API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Unsplash API is used to fetch high-quality images related to countries. Images are displayed on the Country Detail Page to provide visual context for the selected country.
 
-### Code Splitting
+For more information, visit the [Unsplash API Documentation](https://unsplash.com/documentation).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Restcountries API
 
-### Analyzing the Bundle Size
+The Restcountries API is used to retrieve information about countries, including details such as population, area, currencies, and languages. The API is used to populate the country list on the Home Page and provide additional information on the Country Detail Page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For more information, visit the [Restcountries API Documentation](https://restcountries.com/#api-endpoints).
 
-### Making a Progressive Web App
+### OpenWeather API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The OpenWeather API is used to fetch current weather data for countries. Weather information is displayed on the Country Detail Page, providing users with insights into the climate of the selected country.
 
-### Advanced Configuration
+For more information, visit the [OpenWeather API Documentation](https://openweathermap.org/api).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+This project is open for contributions. If you'd like to contribute, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

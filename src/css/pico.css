@@ -1,0 +1,160 @@
+ /**
+     * Custom theme
+    */
+    /* Red Light scheme (Default) */
+    /* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+    --primary: #e53935;
+    --primary-hover: #d32f2f;
+    --primary-focus: rgba(229, 57, 53, 0.125);
+    --primary-inverse: #FFF;
+}
+
+/* Red Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary: #e53935;
+        --primary-hover: #f44336;
+        --primary-focus: rgba(229, 57, 53, 0.25);
+        --primary-inverse: #FFF;
+    }
+}
+
+/* Red Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+    --primary: #e53935;
+    --primary-hover: #f44336;
+    --primary-focus: rgba(229, 57, 53, 0.25);
+    --primary-inverse: #FFF;
+}
+
+/* Red (Common styles) */
+:root {
+    --form-element-active-border-color: var(--primary);
+    --form-element-focus-color: var(--primary-focus);
+    --switch-color: var(--primary-inverse);
+    --switch-checked-background-color: var(--primary);
+}
+
+ .carousel-image-container {
+     display: flex;
+     justify-content: center;
+ }
+
+ .carousel-image {
+     width: 200px;
+     height: 500px;
+     object-fit: cover;
+ }
+
+ /* Add these styles to your CSS file */
+ .country-list {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     grid-gap: 20px;
+ }
+
+ .country-item {
+     background-color: #282c34;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     transition: transform 0.2s ease-in-out;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+ }
+
+ .country-item:hover {
+     transform: translateY(-5px);
+ }
+
+ .country-flag {
+     width: 100px;
+     height: auto;
+     margin-bottom: 10px;
+ }
+
+ .border-countries {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ .border-country {
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     padding: 10px;
+     display: flex;
+     align-items: center;
+ }
+
+ .border-flag {
+     width: 30px;
+     height: auto;
+     margin-right: 10px;
+ }
+
+ .capital-image {
+     margin-top: 20px;
+ }
+
+ .capital-image img {
+     max-width: 70%;
+     height: auto;
+ }
+
+ .nav-list {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .nav-list li {
+     margin-bottom: 10px;
+ }
+
+ .nav-list li:last-child {
+     margin-bottom: 0;
+ }
+
+ .home {
+     display: flex;
+ }
+
+ .sidebar {
+     flex: 1;
+     padding: 20px;
+     background-color: #f0f0f0;
+ }
+
+ .sidebar h3 {
+     margin-bottom: 10px;
+ }
+
+ .sidebar ul {
+     list-style: none;
+     padding: 0;
+ }
+
+ .sidebar li {
+     margin-bottom: 10px;
+     cursor: pointer;
+ }
+
+ .sidebar li span {
+     text-decoration: underline;
+     color: blue;
+     cursor: pointer;
+ }
+
+ .main-content {
+     flex: 3;
+     padding: 20px;
+     background-color: #fff;
+ }
