@@ -1,16 +1,24 @@
+/**
+ * File: Home.js
+ * Created by: Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) on August 16, 2023
+ * Contributors:
+ *   - Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) - Added Home component, fetch countries from API, filter countries by continent and search, and display countries
+ * Last Modified: August 16, 2023
+ */
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import '@picocss/pico';
 
 function Home() {
-    const [countries, setCountries] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [continent, setContinent] = useState(null);
-    const [continents, setContinents] = useState([
+    const [countries, setCountries] = useState([]); // Array of countries
+    const [searchQuery, setSearchQuery] = useState(''); // Search query
+    const [continent, setContinent] = useState(null); // Continent filter
+    const [continents, setContinents] = useState([ // Continents
         'All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'
     ]);
 
     useEffect(() => {
+        // Fetch countries using REST Countries API
         fetch('https://restcountries.com/v3.1/all')
             .then(response => response.json())
             .then(data => {
@@ -20,6 +28,7 @@ function Home() {
 
     const handleContinentClick = (continent) => {
 
+        // If the user clicks on all, fetch all countries
         if (continent === 'All') {
             setContinent(null)
             fetch('https://restcountries.com/v3.1/all')
@@ -30,6 +39,7 @@ function Home() {
             return;
         }
 
+        // Otherwise, fetch countries by continent
         setContinent(continent);
         fetch('https://restcountries.com/v3.1/region/' + continent)
             .then(response => response.json())
@@ -100,3 +110,7 @@ function Home() {
 }
 
 export default Home;
+
+// TODO: Improve the styling of the application  and display other information about the countries
+// TODO: Refactor the code to use components -> ej: Header, Footer, CountryItem, CountryList, etc.
+// TODO: We could add other features to the application, like a map to display the location of the country, or a weather forecast for the country

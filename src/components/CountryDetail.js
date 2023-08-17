@@ -1,8 +1,16 @@
+/**
+ * File: CountryDetail.js
+ * Created by: Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) on August 16, 2023
+ * Contributors:
+ *   - Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) - Added CountryDetail component, fetch country details from API, fetch weather from API, fetch images from API, display country details, weather and images
+ * Last Modified: August 16, 2023
+ */
+
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {Carousel} from 'react-responsive-carousel'; // Import Carousel component
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import Carousel styles
-import BoldLabel from './BoldLabel'; // Import the custom component
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import BoldLabel from './BoldLabel';
 
 import '../css/pico.css';
 
@@ -27,10 +35,9 @@ function CountryDetail() {
             .catch(error => console.error('Error fetching country data:', error));
     }, [countryCode]);
 
+
     useEffect(() => {
-        console.log(countryData);
         if (countryData) {
-            console.log(countryData.latlng);
             // Fetch weather data using OpenWeatherMap API
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${countryData.latlng[0]}&lon=${countryData.latlng[1]}&appid=${OPENWEATHER_API_KEY}`)
                 .then(response => response.json())
@@ -40,8 +47,9 @@ function CountryDetail() {
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
 
-            if (!countryData.borders) return;
+            if (!countryData.borders) return; // No border countries
 
+            // Fetch border country data using REST Countries API
             countryData.borders.forEach(border => {
                 fetch(`https://restcountries.com/v3.1/alpha/${border}`)
                     .then(response => response.json())
@@ -58,7 +66,6 @@ function CountryDetail() {
 
 
     useEffect(() => {
-        console.log(countryData);
         if (countryData) {
             // Fetch images from Unsplash API
             fetch(`https://api.unsplash.com/photos/random?query=${countryData.name.common}&count=20&client_id=${UNSPLASH_ACCESS_KEY}`)
@@ -75,12 +82,12 @@ function CountryDetail() {
     }, [countryData]);
 
     if (!countryData || !weather || !images) {
+        // TODO: Display loading bar -> check <progress></progress> tag in https://picocss.com/#examples
         return <div>Loading...</div>;
     }
 
     return (
         <div className="container">
-
             <header className="container">
                 <nav>
                     <ul>
@@ -178,7 +185,6 @@ function CountryDetail() {
                 </article>
             </div>
 
-
             {images.length > 0 && (
                 <div className="mt-4">
                     <h3>Images from {countryData.name.common}</h3>
@@ -191,10 +197,14 @@ function CountryDetail() {
                     </Carousel>
                 </div>
             )}
-
-
         </div>
     );
 }
 
 export default CountryDetail;
+
+// TODO: Add Loading component
+// TODO: Refactor code to use components for Country, Weather, BorderCountry, Image
+// TODO: Explore the countries and weather APIs to see what other data you can display, there are a lot of other properties you can us-> ej: currencies, languages, etc.
+// TODO: Add a map to display the location of the country
+// TODO: Improve the Weather component to display more information about the weather, and add a weather icon, like a sun or a cloud image depending on the weather

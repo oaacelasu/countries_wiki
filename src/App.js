@@ -1,5 +1,13 @@
+/**
+ * File: App.js
+ * Created by: Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) on August 16, 2023
+ * Contributors:
+ *   - Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) - Added BrowserRouter, Routes and Route components
+ * Last Modified: August 16, 2023
+ */
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Correct import
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './css/pico.css';
 import Home from './components/Home';
 import CountryDetail from './components/CountryDetail';
