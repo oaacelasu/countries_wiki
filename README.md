@@ -37,9 +37,20 @@ To get started with the Travel Explorer App, follow these steps:
 The Countries Wiki App provides the following features:
 
 - Home Page with a list of countries categorized by continents.
+<img width="953" alt="Screenshot 2023-08-18 at 3 39 59 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/624be7c9-e101-4516-b23f-8e309b86db87">
+<img width="958" alt="Screenshot 2023-08-18 at 3 39 51 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/29b2e93e-e081-492f-bdb9-81f4985555b7">
+<img width="951" alt="Screenshot 2023-08-18 at 3 39 42 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/7ea9ed82-43dc-4675-a9a7-15f155142be6">
+
 - Country Detail Page with information about a specific country, including its details, weather, and images.
+<img width="953" alt="Screenshot 2023-08-18 at 3 41 03 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/0bee7777-29a9-48f6-b9a1-83290c1f2761">
+<img width="958" alt="Screenshot 2023-08-18 at 3 40 49 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/0ed8fab5-2fec-44c2-95e0-14dd340d7232">
+<img width="956" alt="Screenshot 2023-08-18 at 3 40 35 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/7cf284d8-2cb1-48f0-aec8-f1fcee6a58f4">
+<img width="953" alt="Screenshot 2023-08-18 at 3 40 27 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/bcc8a09d-d92e-40d0-8fc0-ef72c84b4b5c">
 - Search functionality to filter countries by name.
-- Sidebar for selecting continents to filter countries by region.
+<img width="954" alt="Screenshot 2023-08-18 at 3 40 18 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/88144d24-5e2d-4147-8b81-0bfee474761c">
+- About Us and Contact Us Page
+<img width="957" alt="Screenshot 2023-08-18 at 3 41 21 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/b6685909-5d56-4ee8-b205-3efbecc31188">
+<img width="955" alt="Screenshot 2023-08-18 at 3 41 13 PM" src="https://github.com/oaacelasu/countries_wiki/assets/25845886/49fb7b0d-ee2c-4096-ba44-5159bf31d0a4">
 - Styling using the Pico CSS library for a clean and responsive design.
 
 ## APIs Used
