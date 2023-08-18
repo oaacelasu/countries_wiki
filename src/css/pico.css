@@ -158,3 +158,23 @@
      padding: 20px;
      background-color: #fff;
  }
+
+
+ .icon-hot {
+    color: #e57373; /* Red color for hot weather */
+}
+
+.icon-cold {
+    color: #64b5f6; /* Blue color for cold weather */
+}
+
+.icon-rain {
+    color: #4caf50; /* Green color for rain */
+}
+
+.icon-snow {
+    color: #ff9800; /* Orange color for snow */
+}
+  
+
+  

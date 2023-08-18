@@ -3,6 +3,7 @@
  * Created by: Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) on August 16, 2023
  * Contributors:
  *   - Oscar Acelas (@oacelasupegui4062@conestogac.on.ca) - Added CountryDetail component, fetch country details from API, fetch weather from API, fetch images from API, display country details, weather and images
+ *   - Deepika Koti(dkoti3355@conestogac.on.ca) - Added Map component and lodaing progress bar
  * Last Modified: August 16, 2023
  */
 
@@ -11,11 +12,14 @@ import {Link, useParams} from 'react-router-dom';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import BoldLabel from './BoldLabel';
+import LeafletMap from './LeafletMap';
+import { GiThermometerCold, GiThermometerHot, GiWaterDrop, GiSpeedometer } from 'react-icons/gi';
 
 import '../css/pico.css';
 
 const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 const UNSPLASH_ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+
 
 function CountryDetail() {
     const {countryCode} = useParams();
@@ -23,6 +27,7 @@ function CountryDetail() {
     const [weather, setWeather] = useState(null);
     const [images, setImages] = useState(null);
     const [borderCountryData, setBorderCountryData] = useState({});
+    
 
     useEffect(() => {
         // Fetch country details using REST Countries API
@@ -81,9 +86,16 @@ function CountryDetail() {
         }
     }, [countryData]);
 
+   
     if (!countryData || !weather || !images) {
-        // TODO: Display loading bar -> check <progress></progress> tag in https://picocss.com/#examples
-        return <div>Loading...</div>;
+        return (
+          <div className="loading">
+            <div>Loading...</div>
+            <div className="loading-bar">
+              <progress value="50" max="100"></progress>
+            </div>
+          </div>
+        );
     }
 
     return (
@@ -169,13 +181,29 @@ function CountryDetail() {
                                 <div className="w-1/2">
                                     <h4>Main Weather: {weather.weather[0].main}</h4>
                                     <BoldLabel label="Description" value={`${weather.weather[0].description}`}/>
-                                    <BoldLabel label="Temperature" value={`${weather.main.temp} K`}/>
-                                    <BoldLabel label="Humidity" value={`${weather.main.humidity} %`}/>
-                                    <BoldLabel label="Feels Like" value={`${weather.main.feels_like} K`}/>
+                                    <BoldLabel 
+                                        label="Temperature" 
+                                        value={`${weather.main.temp} K`} 
+                                        weatherIcon={<GiThermometerCold className="icon-cold" />}
+                                    />
+                                    <BoldLabel 
+                                        label="Humidity" 
+                                        value={`${weather.main.humidity} %`}
+                                        weatherIcon={<GiWaterDrop className="icon-rain" />}
+                                    />
+                                    <BoldLabel 
+                                        label="Feels Like" 
+                                        value={`${weather.main.feels_like} K`}
+                                        weatherIcon={<GiThermometerHot className="icon-hot" />}
+                                    />
                                 </div>
                                 <div className="w-1/2">
                                     <h4>Wind</h4>
-                                    <BoldLabel label="Speed" value={`${weather.wind.speed} m/s`}/>
+                                    <BoldLabel 
+                                        label="Speed" 
+                                        value={`${weather.wind.speed} m/s`}
+                                        weatherIcon={<GiSpeedometer className="icon-hot" />}
+                                    />
                                     <BoldLabel label="Degrees" value={`${weather.wind.deg}°`}/>
                                     <BoldLabel label="Gust" value={`${weather.wind.gust} m/s`}/>
                                 </div>
@@ -183,6 +211,11 @@ function CountryDetail() {
                         </div>
                     </div>
                 </article>
+            </div>
+
+            <div className="mt-4">
+                <h3>Country Map</h3>
+                <LeafletMap countryData={countryData} />
             </div>
 
             {images.length > 0 && (

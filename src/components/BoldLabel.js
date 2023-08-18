@@ -8,9 +8,10 @@
 
 import React from 'react';
 
-function BoldLabel({label, value}) {
+function BoldLabel({label, value, weatherIcon}) {
     return (
         <p>
+            {weatherIcon && <span className="weather-icon">{weatherIcon}</span>}
             <strong>{label}:</strong> {value}
         </p>
     );
