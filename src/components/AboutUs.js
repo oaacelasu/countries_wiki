@@ -18,7 +18,7 @@ import image4 from "../images/casual-life-3d-profile-picture-of-woman-in-black-h
 function AboutUs() {
   return (
     <div className="container">
-      <header className="header">
+      <header className="container">
         <nav>
           <ul>
             <li>

@@ -14,7 +14,7 @@
  function ContactUs() {
    return (
      <div className="container">
-       <header className="header">
+       <header className="container">
          <nav>
            <ul>
              <li>

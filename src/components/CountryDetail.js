@@ -235,9 +235,3 @@ function CountryDetail() {
 }
 
 export default CountryDetail;
-
-// TODO: Add Loading component
-// TODO: Refactor code to use components for Country, Weather, BorderCountry, Image
-// TODO: Explore the countries and weather APIs to see what other data you can display, there are a lot of other properties you can us-> ej: currencies, languages, etc.
-// TODO: Add a map to display the location of the country
-// TODO: Improve the Weather component to display more information about the weather, and add a weather icon, like a sun or a cloud image depending on the weather

@@ -65,7 +65,7 @@ function Home() {
   return (
     <div>
       <div className="container">
-        <header className="header">
+        <header className="container">
           <nav>
             <ul>
               <li>
@@ -82,7 +82,7 @@ function Home() {
             </ul>
           </nav>
         </header>
-        <article className="grid mb-4">
+        <div className="grid mb-4">
           <div className="flex justify-center mb-4">
             <input
               type="text"
@@ -104,7 +104,7 @@ function Home() {
               ))}
             </ul>
           </details>
-        </article>
+        </div>
 
         <div className="country-list">
           {filteredCountries.map((country) => (
@@ -135,7 +135,3 @@ function Home() {
 }
 
 export default Home;
-
-// TODO: Improve the styling of the application  and display other information about the countries
-// TODO: Refactor the code to use components -> ej: Header, Footer, CountryItem, CountryList, etc.
-// TODO: We could add other features to the application, like a map to display the location of the country, or a weather forecast for the country
